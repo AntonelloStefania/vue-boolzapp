@@ -9,8 +9,50 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="app-container">
-        <div class="col-1 col-md-3 avatar-section"></div>
+    <div class="app-container" id="app">
+        <!-- sezione SINISTRA contatti -->
+        <div class="col-2 col-md-auto avatar-section">
+            <!-- sezione il mio profilo -->
+            <div class="col-12 my-avatar ms-2">
+                <div class="col-12 col-md avatar-profile">
+                    <img src="./img/avatar_io.jpg" alt="">
+                    <span>Sofia</span>
+                </div>
+                <div class="col-4 avatar-icons d-none d-md-block">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-message mx-2"></i>
+                    <i class="fas fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <!-- sezione messaggio notifiche -->
+            <div class="col-12 notification d-flex justify-content-center  mt-2">
+                <div class="notification-icon  ms-0 ms-md-2 col-12 col-md-2">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="notification-messages col-10 d-none d-md-block">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <br>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <!-- input ricerca -->
+            <div class="col-12 form-group has-search d-flex">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <!-- lista contatti -->
+            <div class="col-12">
+                <div class="contact" v-for="(contact,index) in contacts">
+                    <div class="col-12 col-md avatar-profile my-3 ms-2">
+                        <img :src="contacts[index].avatar" alt="">
+                        <span>{{contacts[index].name}}</span>
+                    </div>
+                </div>
+              
+                
+            </div>
+        </div>
+        <!-- sezione DESTRA per la chat -->
         <div class="col-11 col-md-9 message-section"></div>
     </div>
 </body>
