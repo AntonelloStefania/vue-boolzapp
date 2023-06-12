@@ -172,10 +172,10 @@ createApp({
             activeContact : 0,
             msg_date: '',
             new_msg:'',
-            
+            response_obj: '',
         }
        
-    },
+    }, 
 
     methods: {
         selectContact(index){
@@ -195,6 +195,15 @@ createApp({
             }
             this.contacts[this.activeContact].messages.push(obj)
             this.new_msg=''
+            setTimeout(()=>{
+              obj = {
+                    date: '',
+                    message: 'ok',
+                    status:'received'
+                }
+                this.contacts[this.activeContact].messages.push(obj)
+            },2000)
+            
         }
 
     },
