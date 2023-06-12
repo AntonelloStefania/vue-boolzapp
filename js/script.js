@@ -196,7 +196,7 @@ createApp({
             response_obj: '',
             // dropdown: false,
             searched_name:'',
-            // completeDate:'',
+            //completeDate:'',
             // hours:'',
             // minutes:'',
             
@@ -210,21 +210,26 @@ createApp({
         selectContact(index){
             this.activeContact = index
             console.log(index)
-            
         },
-        //newDate NON RIESCO ad estrapolare la data corrente per riportarla come dato nel dom
-        // newDate(){
-        //     let currentDate = new Date ()
-        //     this.hours =currentDate.getHours().toString()
-        //     this.minutes = currentDate.getMinutes().toString()
-        //     this.completeDate= this.hours;
+        // //newDate NON RIESCO ad estrapolare la data corrente per riportarla come dato nel dom
+        // // newDate(){
+        // //     let currentDate = new Date ()
+        // //     this.hours =currentDate.getHours().toString()
+        // //     this.minutes = currentDate.getMinutes().toString()
+        // //     this.completeDate= this.hours;
            
-        // },
+        // // },
+        //NON FUNZIONA NEANCHE QUESTA
+        // newDate2(){
+        //     let currentDate= DateTime.now().toLocaleString()
+        //     this.completeDate = currentDate
+        // },   
+        
         
         //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
             let obj = {
-                date:'',
+                date: '',
                 message: this.new_msg,
                 status:'sent'
             }
@@ -249,8 +254,7 @@ createApp({
         dropDown(index){
             this.contacts[this.activeContact].messages[index].dropdown = !this.contacts[this.activeContact].messages[index].dropdown
             console.log(this.contacts[this.activeContact].messages.dropdown)    
-            
-    },
+         },
         //funzione per cancellare il messaggio
         deleteMessage(messageIndex){
             this.contacts[this.activeContact].messages.splice(messageIndex, 1);

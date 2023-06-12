@@ -21,7 +21,6 @@ body{
 }
 /* sezione contatti */
 .avatar-section{
-    border: 1px solid black;
     /* height: 100%; */
     display: flex;
     flex-direction: column;
@@ -48,7 +47,7 @@ body{
 }
 
 .notification-icon{
-    background-color: grey;
+    background-color: #F2FBFF;
     border-radius: 50%;
     text-align: center;
     padding: 7px 0;
@@ -70,6 +69,10 @@ body{
     height: 70%;
 }
 /* input ricerca */
+.searchbar{
+    width: 95%;
+    margin: 3px auto;
+}
 .has-search .form-control {
     padding-left: 2.375rem;
 }
@@ -95,7 +98,6 @@ body{
 }
 /* sezione messaggi */
 .message-section{
-    border: 1px solid black;
     background-image: url(../img/mine.jpg);
     position: relative;
     /* height: 100%; */
@@ -135,6 +137,14 @@ body{
     bottom: 0;
     width: 100%;
     padding: 4px 0;
+}
+
+.dropdown-arrow{
+    display:none
+}
+
+.msg:hover .dropdown-arrow{
+    display: inline;
 }
 
 @media screen and (max-height : 600px) {
