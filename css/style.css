@@ -22,7 +22,7 @@ body{
 /* sezione contatti */
 .avatar-section{
     border: 1px solid black;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
 }
@@ -31,6 +31,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.my-avatar{
+    background-color: #EAEAEA;
+}
+
+.avatar-icons, .chat-contact{
+    color: #B1B1B1;
 }
 
 .notification{
@@ -75,5 +83,29 @@ body{
 /* sezione messaggi */
 .message-section{
     border: 1px solid black;
-    height: 100%;
+    /* height: 100%; */
+}
+
+/* chat */
+.chat-section{
+    background-image: url(../img/mine.jpg);
+    height:87%;
+}
+
+.received-msg{
+    margin: 55px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 1rem;
+}
+
+.sent-msg{
+    margin: 20px 55px;
+    background-color: #D5F9BA;
+    padding: 15px;
+    border-radius: 1rem;
+}
+
+.input-message{
+    background-color: #F3EDEA;
 }
