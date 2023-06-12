@@ -64,6 +64,11 @@ body{
     border-radius: 50%;
 }
 
+.users{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 70%;
+}
 /* input ricerca */
 .has-search .form-control {
     padding-left: 2.375rem;
@@ -90,8 +95,8 @@ body{
 
 /* chat */
 .chat-section{
-    
     height:87%;
+    overflow-y: auto;
 }
 
 .received-msg{
@@ -115,4 +120,30 @@ body{
     bottom: 0;
     width: 100%;
     padding: 4px 0;
+}
+
+@media screen and (max-height : 600px) {
+    .users{
+        height: 50%;
+    }
+    .chat-section{
+        height: 70%;
+    }
+    
+}
+
+@media screen and (max-height : 320px) {
+    .users{
+        height: 20%;
+    }
+}
+
+@media screen and (max-height : 210px) {
+    .users{
+       display: none;
+    }
+    .chat-section{
+        height: 30%;
+    }
+    
 }

@@ -178,15 +178,17 @@ createApp({
     }, 
 
     methods: {
+        //funzione che determina l'utente attivo
         selectContact(index){
             this.activeContact = index
             console.log(index)
             
         },
+        //funzione che determina la data (non funzionante)
         msgData(){
             this.msg_date = this.messages[index].date
         },
-        
+        //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
             let obj = {
                 date: '',
