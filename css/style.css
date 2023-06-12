@@ -83,12 +83,14 @@ body{
 /* sezione messaggi */
 .message-section{
     border: 1px solid black;
+    background-image: url(../img/mine.jpg);
+    position: relative;
     /* height: 100%; */
 }
 
 /* chat */
 .chat-section{
-    background-image: url(../img/mine.jpg);
+    
     height:87%;
 }
 
@@ -109,4 +111,8 @@ body{
 
 .input-message{
     background-color: #F3EDEA;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 0;
 }

@@ -170,7 +170,8 @@ createApp({
            
             
             activeContact : 0,
-            msg_data:'',
+            msg_date: '',
+            new_msg:'',
             
         }
        
@@ -182,9 +183,18 @@ createApp({
             console.log(index)
             
         },
-        msgData(index){
-            this.messages[index].date.slice(1,10) =  this.msg_data
-
+        msgData(){
+            this.msg_date = this.messages[index].date
+        },
+        
+        newMessage(){
+            let obj = {
+                date: '',
+                message: this.new_msg,
+                status:'sent'
+            }
+            this.contacts[this.activeContact].messages.push(obj)
+            this.new_msg=''
         }
 
     },
