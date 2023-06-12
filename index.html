@@ -38,12 +38,12 @@
             <!-- input ricerca -->
             <div class="col-12 form-group has-search d-flex">
                 <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input  v-model="searched_name" @input="searchContact" type="text" class="form-control" placeholder="Search">
             </div>
           
             <!-- lista contatti -->
             <div class="col-12 users">
-                <div class="contact" v-for="(contact,index) in contacts" @click="selectContact(index)">
+                <div class="contact" v-for="(contact,index) in contacts" @click="selectContact(index)" :class="contact.visible ? 'show': 'hide'">
                     <div class="col-12 col-md avatar-profile my-3 ms-lg-2 d-flex justify-content-center justify-content-lg-start align-items-center">
                         
                         <img :src="contacts[index].avatar" alt="">

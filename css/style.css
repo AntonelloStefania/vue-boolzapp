@@ -85,6 +85,14 @@ body{
     pointer-events: none;
     color: #aaa;
 }
+
+.hide{
+    display: none;
+}
+
+.show{
+    display:block
+}
 /* sezione messaggi */
 .message-section{
     border: 1px solid black;

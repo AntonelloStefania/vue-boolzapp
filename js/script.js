@@ -173,11 +173,13 @@ createApp({
             msg_date: '',
             new_msg:'',
             response_obj: '',
+            searched_name:'',
         }
-       
+        
     }, 
-
+    
     methods: {
+        
         //funzione che determina l'utente attivo
         selectContact(index){
             this.activeContact = index
@@ -205,8 +207,15 @@ createApp({
                 }
                 this.contacts[this.activeContact].messages.push(obj)
             },2000)
-            
-        }
+        },
+        //funzione ricerca contatti
+        searchContact(){
+            let nameSearched = this.searched_name.toLowerCase(); 
+            this.contacts.forEach((contact) => {
+            let contactName = contact.name.toLowerCase();
+            contact.visible = contactName.includes(nameSearched);
+        });
+    }
 
     },
 }).mount('#app');
