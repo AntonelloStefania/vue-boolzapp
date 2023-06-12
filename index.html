@@ -85,9 +85,9 @@
                         <span class="data-msg">
                             {{contacts[activeContact].messages[index].date.slice(10,16)}}
                         </span>
-                        <i class="hover fas fa-angle-down" data-toggle="dropdown" @click="dropDown"></i>
+                        <i class="hover fas fa-angle-down" data-toggle="dropdown" @click="dropDown(index)"></i>
                     </div>
-                    <div class="dropdown-menu" :class="dropdown ? 'show' : ''" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu" :class="contacts[activeContact].messages[index].dropdown ? 'show' : ''" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Contatto</a>
                         <a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella il messaggio</a>
                     </div>
