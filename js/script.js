@@ -165,13 +165,27 @@ createApp({
                         }
                     ],
                 }
-            ]
-            
+            ],
 
+           
+            
+            activeContact : 0,
+            msg_data:'',
+            
         }
+       
     },
 
     methods: {
+        selectContact(index){
+            this.activeContact = index
+            console.log(index)
+            
+        },
+        msgData(index){
+            this.messages[index].date.slice(1,10) =  this.msg_data
+
+        }
 
     },
 }).mount('#app');
