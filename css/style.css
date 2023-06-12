@@ -122,6 +122,13 @@ body{
     justify-self: end;
 }
 
+.data-msg{
+    font-size: 10px;
+    margin-left: 40px;
+    position: relative;
+    top: 10px;
+}
+
 .input-message{
     background-color: #F3EDEA;
     position: absolute;

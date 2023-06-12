@@ -151,29 +151,35 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                            status: 'received'
+                            status: 'received',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                            status: 'sent'
+                            status: 'sent',
                         },
                         {
                             date: '10/01/2020 15:51:00',
                             message: 'OK!!',
-                            status: 'received'
+                            status: 'received',
+                            
                         }
                     ],
                 }
             ],
-
-           
+            
+            
             
             activeContact : 0,
-            msg_date: '',
+            msg_date:'',
             new_msg:'',
             response_obj: '',
+            dropdown: false,
             searched_name:'',
+            // completeDate:'',
+            // hours:'',
+            // minutes:'',
+            
         }
         
     }, 
@@ -186,17 +192,23 @@ createApp({
             console.log(index)
             
         },
-        //funzione che determina la data (non funzionante)
-        msgData(){
-            this.msg_date = this.messages[index].date
-        },
+        //newDate NON RIESCO ad estrapolare la data corrente per riportarla come dato nel dom
+        // newDate(){
+        //     let currentDate = new Date ()
+        //     this.hours =currentDate.getHours().toString()
+        //     this.minutes = currentDate.getMinutes().toString()
+        //     this.completeDate= this.hours;
+           
+        // },
+        
         //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
             let obj = {
-                date: '',
+                date:'',
                 message: this.new_msg,
                 status:'sent'
             }
+            
             this.contacts[this.activeContact].messages.push(obj)
             this.new_msg=''
             setTimeout(()=>{
@@ -207,6 +219,16 @@ createApp({
                 }
                 this.contacts[this.activeContact].messages.push(obj)
             },2000)
+        },
+
+        //funzione per il dropdown NON FUNZIONA CORRETTAMENTE
+        dropDown(){
+                this.dropdown = !this.dropdown
+                console.log(this.dropdown)
+        },
+        //funzione per cancellare il messaggio
+        deleteMessage(messageIndex){
+            this.contacts[this.activeContact].messages.splice(messageIndex, 1);
         },
         //funzione ricerca contatti
         searchContact(){
