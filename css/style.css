@@ -19,6 +19,10 @@ body{
     background-color: white;
     display: flex;
 }
+
+i, input, .avatar-profile{
+    cursor: pointer;
+}
 /* sezione contatti */
 .avatar-section{
     /* height: 100%; */
@@ -95,6 +99,10 @@ body{
 
 .show{
     display:block
+}
+
+.avatar-profile:hover{
+    background-color:#E9EBEB
 }
 /* sezione messaggi */
 .message-section{
