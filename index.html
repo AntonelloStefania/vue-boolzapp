@@ -86,10 +86,10 @@
                 <div v-for="(message, index) in contacts[activeContact].messages" class="col-12 d-flex msg" :class="contacts[activeContact].messages[index].status === 'received' ? '': 'justify-content-end'">
                     <div :class="contacts[activeContact].messages[index].status === 'received' ? 'received-msg':'sent-msg'">
                         <span class="text" >
-                            {{contacts[activeContact].messages[index].message}}
+                            {{message.message}}
                         </span>
                         <span class="data-msg">
-                            {{contacts[activeContact].messages[index].date.slice(-8)}}
+                            {{message.date.slice(-8)}}
                         </span>
                         <div class="position-relative">
                             <i class="hover fas fa-angle-down dropdown-arrow pb-2"  @click="dropDown(index)"></i>
