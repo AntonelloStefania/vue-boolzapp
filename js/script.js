@@ -235,11 +235,13 @@ createApp({
         //funzione per il dropdown
         dropDown(index){
             this.contacts[this.activeContact].messages[index].dropdown = !this.contacts[this.activeContact].messages[index].dropdown
-            console.log(this.contacts[this.activeContact].messages.dropdown)    
          },
         //funzione per cancellare il messaggio
         deleteMessage(messageIndex){
             this.contacts[this.activeContact].messages.splice(messageIndex, 1);
+            if(messageIndex === 0){
+                this.contacts[this.activeContact].messages.pop()
+            }
         },
         //funzione ricerca contatti
         searchContact(){
@@ -248,7 +250,24 @@ createApp({
             let contactName = contact.name.toLowerCase();
             contact.visible = contactName.includes(nameSearched);
             });
-        }
-
+        },
+        //funzione ultimo messaggio
+        getLastMessage(contact) {
+            let messages = contact.messages;
+            if (messages.length > 0) {
+                const lastMessage = messages[messages.length - 1];
+                return lastMessage.message;
+            }
+            return '';
+        },
+        //funzione data ultimo messaggio
+        getLastLogin(contact) {
+            let messages = contact.messages;
+            if (messages.length > 0) {
+              let last_login = messages[messages.length - 1];
+              return last_login.date.slice(-8);
+            }
+            return '';
+          }
     },
 }).mount('#app');

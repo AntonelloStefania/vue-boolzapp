@@ -51,13 +51,12 @@
                             {{contacts[index].name}}
                         </span>
                         <span class="thumb d-none d-lg-inline pt-1 ps-1 slide-left">
-                            {{ contact.messages[contact.messages.length - 1].message }}
-                            <span class="ps-3">{{contact.messages[contact.messages.length - 1].date.slice(-8)}}</span>
+                            {{ getLastMessage(contact)}}
+                            <span class="ps-5" v-if="contact.messages.length === 0">Nessun messaggio</span>
+                            <span class="ps-5" v-else>{{ getLastLogin(contact) }}</span>
                         </span>
                     </div>
                 </div>
-              
-                
             </div>
         </div>
         <!-- sezione DESTRA per la chat -->
@@ -71,7 +70,7 @@
                             {{contacts[activeContact].name}}
                         </span>
                         <span class="thumb ps-3">
-                            ultimo accesso {{contacts[activeContact].messages[contacts[activeContact].messages.length - 1].date.slice(-8)}}
+                            <span >{{newDate()}}</span>
                         </span>
                     </div>
                 </div>
@@ -93,8 +92,8 @@
                             {{contacts[activeContact].messages[index].date.slice(-8)}}
                         </span>
                         <div class="position-relative">
-                            <i class="hover fas fa-angle-down dropdown-arrow pb-2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" @click="dropDown(index)"></i>
-                            <ul class="dropdown-menu dropdown-box" :class="contacts[activeContact].messages[index].dropdown ? 'show' : ''" aria-labelledby="dropdownMenuButton">
+                            <i class="hover fas fa-angle-down dropdown-arrow pb-2"  @click="dropDown(index)"></i>
+                            <ul class="dropdown-menu dropdown-box " :class="contacts[activeContact].messages[index].dropdown ? 'show' : ''" >
                                <li> <a class="dropdown-item" href="#">Contatto</a></li>
                                <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella il messaggio</a></li>
                             </ul>
@@ -114,4 +113,3 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="./js/script.js"></script>
 </html>
-
