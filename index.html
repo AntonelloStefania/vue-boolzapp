@@ -45,7 +45,7 @@
             <!-- lista contatti -->
             <div class="col-12 users">
                 <div class="contact" v-for="(contact,index) in contacts" @click="selectContact(index)" :class="contact.visible ? 'show': 'hide'">
-                    <div class="col-12 col-md avatar-profile my-3 ps-lg-2 d-flex justify-content-center  flex-column align-items-center align-items-lg-start ">
+                    <div class="col-12 col-md avatar-profile py-1 ps-lg-2 d-flex justify-content-center  flex-column align-items-center align-items-lg-start ">
                         <img :src="contacts[index].avatar" alt="">
                         <span class="ms-2 d-none d-lg-inline ">
                             {{contacts[index].name}}
