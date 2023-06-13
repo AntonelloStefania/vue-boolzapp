@@ -239,7 +239,6 @@ createApp({
         //funzione per cancellare il messaggio
         deleteMessage(messageIndex){
             this.contacts[this.activeContact].messages.splice(messageIndex, 1);
-            
         },
         //funzione ricerca contatti
         searchContact(){
