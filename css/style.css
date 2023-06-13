@@ -171,6 +171,10 @@ i:hover{
     display: inline;
 }
 
+.msg{
+    word-wrap: break-word;
+}
+
 @media screen and (max-height : 600px) {
     .users{
         height: 50%;
