@@ -173,6 +173,7 @@ i:hover{
 
 .msg{
     word-wrap: break-word;
+    word-break: break-all;
 }
 
 @media screen and (max-height : 600px) {
