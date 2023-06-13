@@ -124,7 +124,6 @@ i:hover{
 .message-section{
     background-image: url(../img/mine.jpg);
     position: relative;
-    /* height: 100%; */
 }
 
 /* chat */
@@ -164,7 +163,16 @@ i:hover{
 }
 
 .dropdown-arrow{
-    display:none
+    display:none;
+    position:absolute;
+    right: 0;
+    bottom:50%;
+}
+
+.dropdown-box{
+    position:absolute; 
+    right:0;
+    
 }
 
 .msg:hover .dropdown-arrow{
@@ -183,7 +191,6 @@ i:hover{
     .chat-section{
         height: 70%;
     }
-    
 }
 
 @media screen and (max-height : 320px) {
@@ -199,7 +206,6 @@ i:hover{
     .chat-section{
         height: 30%;
     }
-    
 }
 
 

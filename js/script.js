@@ -205,7 +205,7 @@ createApp({
             this.activeContact = index
             console.log(index)
         },
-        // //newDate NON RIESCO ad estrapolare la data corrente per riportarla come dato nel dom
+        // //newDate 
         newDate(){
             let actualDate = luxon.DateTime;
             let today = actualDate.now().toLocaleString(actualDate.DATETIME_SHORT).slice(-5)
