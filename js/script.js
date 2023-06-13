@@ -188,21 +188,15 @@ createApp({
                 }
             ],
             
-            
-            
             activeContact : 0,
             msg_date:'',
             new_msg:'',
             response_obj: '',
-            // dropdown: false,
             searched_name:'',
-            //completeDate:'',
-            // hours:'',
-            // minutes:'',
-            
+            completeDate:'',
+
         }
-        
-    }, 
+    },
     
     methods: {
         
@@ -212,24 +206,16 @@ createApp({
             console.log(index)
         },
         // //newDate NON RIESCO ad estrapolare la data corrente per riportarla come dato nel dom
-        // // newDate(){
-        // //     let currentDate = new Date ()
-        // //     this.hours =currentDate.getHours().toString()
-        // //     this.minutes = currentDate.getMinutes().toString()
-        // //     this.completeDate= this.hours;
-           
-        // // },
-        //NON FUNZIONA NEANCHE QUESTA
-        // newDate2(){
-        //     let currentDate= DateTime.now().toLocaleString()
-        //     this.completeDate = currentDate
-        // },   
-        
-        
+        newDate(){
+            let actualDate = luxon.DateTime;
+            let today = actualDate.now().toLocaleString(actualDate.DATETIME_SHORT).slice(-5)
+            return today
+         },
+
         //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
             let obj = {
-                date: '',
+                date: this.newDate(),
                 message: this.new_msg,
                 status:'sent'
             }
@@ -238,7 +224,7 @@ createApp({
             this.new_msg=''
             setTimeout(()=>{
               obj = {
-                    date: '',
+                    date: this.newDate(),
                     message: 'ok',
                     status:'received'
                 }
@@ -247,10 +233,6 @@ createApp({
         },
 
         //funzione per il dropdown
-       
-        addDropdown(){
-            this.contacts[this.activeContact].messages.push({dropdown : false})
-        },
         dropDown(index){
             this.contacts[this.activeContact].messages[index].dropdown = !this.contacts[this.activeContact].messages[index].dropdown
             console.log(this.contacts[this.activeContact].messages.dropdown)    
@@ -265,8 +247,8 @@ createApp({
             this.contacts.forEach((contact) => {
             let contactName = contact.name.toLowerCase();
             contact.visible = contactName.includes(nameSearched);
-        });
-    }
+            });
+        }
 
     },
 }).mount('#app');
