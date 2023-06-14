@@ -262,7 +262,7 @@ createApp({
             let messages = contact.messages;
             if (messages.length > 0) {
               let last_login = messages[messages.length - 1];
-              return last_login.date.slice(-8);
+              return last_login.date.slice(11,16);
             }
             return '';
           }
