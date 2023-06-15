@@ -45,16 +45,19 @@
             <!-- lista contatti -->
             <div class="col-12 users">
                 <div class="contact" v-for="(contact,index) in contacts" @click="selectContact(index)" :class="contact.visible ? 'show': 'hide'">
-                    <div class="col-12 col-md avatar-profile py-1 ps-lg-2 d-flex justify-content-center  flex-column align-items-center align-items-lg-start ">
-                        <img :src="contacts[index].avatar" alt="">
-                        <span class="ms-2 d-none d-lg-inline ">
-                            {{contacts[index].name}}
-                        </span>
-                        <span class="thumb d-none d-lg-inline pt-1 ps-1 slide-left">
-                            {{ getLastMessage(contact)}}
-                            <span class="ps-5" v-if="contact.messages.length === 0">Nessun messaggio</span>
-                            <span class="ps-5" v-else>oggi alle {{ getLastLogin(contact) }}</span>
-                        </span>
+                    <div class="col-12 col-md avatar-profile py-1 d-flex justify-content-center  align-items-center justify-content-lg-start ">
+                        <img class="col-12 col-lg-3" :src="contacts[index].avatar" alt="">
+                        <div class="col-7 d-lg-flex d-none flex-column">
+                            <span >
+                                {{contacts[index].name}}
+                            </span>
+                            <span class="thumb  pt-1 ps-1 slide-left">
+                                {{ getLastMessage(contact)}}
+                                <span class="ps-5" v-if="contact.messages.length === 0">Nessun messaggio</span>
+                                <span class="ps-5" v-else>oggi alle {{ getLastLogin(contact) }}</span>
+                            </span>
+
+                        </div>
                     </div>
                 </div>
             </div>

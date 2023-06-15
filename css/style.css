@@ -71,6 +71,7 @@ i:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    z-index: 2;
 }
 
 .users{
@@ -113,6 +114,7 @@ i:hover{
     width: 90%;
     color: #929090;
 }
+
 .slide-left:hover {
     animation:slide-left 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
