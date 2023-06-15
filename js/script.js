@@ -214,7 +214,7 @@ createApp({
 
         //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
-           // if(this.new_msg.trim() != ''){
+            if(this.new_msg.trim() != ''){
 
            
             let obj = {
@@ -225,6 +225,7 @@ createApp({
             
             this.contacts[this.activeContact].messages.push(obj)
             this.new_msg=''
+        }
             setTimeout(()=>{
               obj = {
                     date: this.newDate(),
