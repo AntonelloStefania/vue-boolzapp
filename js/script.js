@@ -214,6 +214,9 @@ createApp({
 
         //funzione per inviare un nuovo messaggio e setTimeout per risposta automatica
         newMessage(){
+           // if(this.new_msg.trim() != ''){
+
+           
             let obj = {
                 date: this.newDate(),
                 message: this.new_msg,
